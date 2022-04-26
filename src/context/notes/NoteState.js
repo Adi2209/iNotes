@@ -13,7 +13,7 @@ const NoteState = (props) => {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-        "auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjI1MzM2YjQwYjIzZjg4M2FhZDA2ZTAxIn0sImlhdCI6MTY0OTc4OTMxMH0.JESZqLGL6livu0ox1037IPG4zgP1bns6zc6u4u7sd0c"
+        "auth-token": localStorage.getitem('token')
       }
     });
     const json = await response.json() 
@@ -28,7 +28,7 @@ const NoteState = (props) => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        "auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjI1MzM2YjQwYjIzZjg4M2FhZDA2ZTAxIn0sImlhdCI6MTY0OTc4OTMxMH0.JESZqLGL6livu0ox1037IPG4zgP1bns6zc6u4u7sd0c"
+        "auth-token": localStorage.getitem('token')
       },
       body: JSON.stringify({title, description, tag})
     });
@@ -44,10 +44,12 @@ const NoteState = (props) => {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
-        "auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjI1MzM2YjQwYjIzZjg4M2FhZDA2ZTAxIn0sImlhdCI6MTY0OTc4OTMxMH0.JESZqLGL6livu0ox1037IPG4zgP1bns6zc6u4u7sd0c"
+        "auth-token": localStorage.getitem('token')
       }
     });
     const json = response.json(); 
+
+    console.log(json);
     const newNotes = notes.filter((note) => { return note._id !== id })
     setNotes(newNotes)
   }
@@ -59,11 +61,13 @@ const NoteState = (props) => {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
-        "auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjI1MzM2YjQwYjIzZjg4M2FhZDA2ZTAxIn0sImlhdCI6MTY0OTc4OTMxMH0.JESZqLGL6livu0ox1037IPG4zgP1bns6zc6u4u7sd0c"
+        "auth-token": localStorage.getitem('token')
       },
       body: JSON.stringify({title, description, tag})
     });
     const json = await response.json(); 
+    console.log(json);
+    
 
      let newNotes = JSON.parse(JSON.stringify(notes))
     // Logic to edit in client
