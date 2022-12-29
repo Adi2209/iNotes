@@ -1,3 +1,5 @@
+Notes is a MERN Application for managing notes on the cloud.
+
 SignUp: 
 
 ![image](https://user-images.githubusercontent.com/75134530/166137326-a429d1f6-de0e-4e3c-84f8-56f53525c0d7.png)
