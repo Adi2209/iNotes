@@ -1,4 +1,4 @@
-Notes is a MERN Application for managing notes on the cloud.
+iNotes is a full-stack web application that helps users to store their important notes on the cloud. Users have the option to Create/Read/Update/Delete (CRUD) options. Once registered, users can log in and use all the features.
 
 SignUp: 
 
